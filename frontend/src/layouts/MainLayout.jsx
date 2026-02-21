@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Cart from "../components/Cart";
 import Header from "../components/Header";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,6 +12,7 @@ const MainLayout = () => {
   const [isLogin, setIsLogin] = useState();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const featchData = async () => {
     setLoading(true);
@@ -56,7 +57,10 @@ const MainLayout = () => {
       <Header
         isLogin={isLogin}
         cartCount={cartItems?.length}
-        onCartClick={() => setIsCartOpen(true)}
+        onCartClick={() => {
+          setIsCartOpen(true);
+          navigate("/");
+        }}
         onLogout={() => {
           localStorage.removeItem("token");
           setIsLogin(false);
