@@ -33,12 +33,13 @@ function Header({ cartCount, onCartClick, isLogin, onLogout }) {
                 Categories
               </Link>
               {isLogin === true ? (
-                <button
+                <Link
+                  to={"/"}
                   onClick={onLogout}
                   className="hover:text-gray-300 transition-colors"
                 >
                   Logout
-                </button>
+                </Link>
               ) : (
                 <>
                   <Link

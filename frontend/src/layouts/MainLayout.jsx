@@ -12,7 +12,6 @@ const MainLayout = () => {
   const [isLogin, setIsLogin] = useState();
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const featchData = async () => {
     setLoading(true);
@@ -59,7 +58,6 @@ const MainLayout = () => {
         cartCount={cartItems?.length}
         onCartClick={() => {
           setIsCartOpen(true);
-          navigate("/");
         }}
         onLogout={() => {
           localStorage.removeItem("token");
