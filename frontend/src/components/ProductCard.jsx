@@ -49,7 +49,7 @@ function ProductCard({ product }) {
               </svg>
             ))}
             <span className="ml-2 text-sm text-gray-600">
-              {product.averageRating}
+              {product.averageRating.toFixed(2)}
             </span>
           </div>
         </div>

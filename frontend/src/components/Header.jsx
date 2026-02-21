@@ -25,9 +25,13 @@ function Header({ cartCount, onCartClick, isLogin, onLogout }) {
                   Add Item
                 </Link>
               )}
-              <a href="#" className="hover:text-gray-300 transition-colors">
+              <Link
+                to={"categories"}
+                href="#"
+                className="hover:text-gray-300 transition-colors"
+              >
                 Categories
-              </a>
+              </Link>
               {isLogin === true ? (
                 <button
                   onClick={onLogout}
@@ -55,22 +59,6 @@ function Header({ cartCount, onCartClick, isLogin, onLogout }) {
           </div>
 
           <div className="flex items-center space-x-6">
-            <button className="hover:text-gray-300 transition-colors hidden sm:block">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                />
-              </svg>
-            </button>
-
             <button
               onClick={onCartClick}
               className="relative hover:text-gray-300 transition-colors"

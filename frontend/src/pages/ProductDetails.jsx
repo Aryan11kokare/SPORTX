@@ -40,6 +40,7 @@ export default function ProductDetails() {
       },
     });
     setSuggestions(responce.data);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(() => {
       setLoading(false);
     }, 1000);
@@ -84,6 +85,18 @@ export default function ProductDetails() {
   const handleClose = () => {
     setShowFrom(false);
   };
+
+  if (loading) {
+    return (
+      <div className="h-screen w-screen flex justify-center  items-center bg-black">
+        <div className="flex justify-center items-center">
+          <h1 className="text-6xl font-extrabold bg-gradient-to-r from-white via-gray-700 to-white bg-[length:200%] animate-[shimmer_2s_linear_infinite] bg-clip-text text-transparent">
+            SPORTX
+          </h1>
+        </div>
+      </div>
+    );
+  }
 
   if (!product) {
     return (
